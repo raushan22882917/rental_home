@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Target, Users, Award, TrendingUp, Check, Building2 } from "lucide-react";
+import { ArrowRight, Target, Users, Award, Building2, Check } from "lucide-react";
 
 const team = [
   {
@@ -68,18 +68,25 @@ const milestones = [
 export default function About() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-[#0a1628] overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-15"
+
+      {/* ─── HERO ───────────────────────────────────────────── */}
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        <img
+          src="/images/about-hero.png"
+          alt="Real estate aerial view"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#060e1f]/96 via-[#0a1628]/90 to-[#060e1f]/85" />
+        <div className="absolute inset-0 opacity-20"
           style={{ backgroundImage: `radial-gradient(circle at 70% 30%, rgba(196,146,31,0.5) 0%, transparent 60%)` }}
         />
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
             <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">About Realtical</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-6 leading-tight">
               We're on a Mission to{" "}
-              <span className="text-[#e8b84b]">Transform</span> Real Estate Marketing in India
+              <span className="text-[#e8b84b] italic">Transform</span>{" "}
+              Real Estate Marketing in India
             </h1>
             <p className="text-white/65 text-lg leading-relaxed max-w-2xl">
               Founded by real estate marketing veterans, Realtical exists for one purpose: helping builders and developers generate a consistent, predictable flow of qualified property buyers.
@@ -88,7 +95,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Story */}
+      {/* ─── STORY ──────────────────────────────────────────── */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
@@ -97,7 +104,7 @@ export default function About() {
               <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#0d1b38] mt-3 mb-5">
                 Born Out of Frustration with Generic Marketing Agencies
               </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-[0.95rem]">
                 <p>
                   In 2019, our founders — having worked in-house at India's largest real estate portals — saw a recurring problem: builders were paying lakhs to generic digital marketing agencies who didn't understand property buyers, project types, or local market dynamics.
                 </p>
@@ -113,37 +120,50 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { value: "5+", label: "Years in Real Estate Marketing" },
-                { value: "120+", label: "Builder Projects Served" },
-                { value: "2,400+", label: "Qualified Leads Generated" },
-                { value: "28", label: "Team Members" },
-              ].map(({ value, label }) => (
-                <div
-                  key={label}
-                  className="bg-gray-50 border border-border rounded-2xl p-6 text-center hover:border-primary/30 hover:shadow-md transition-all"
-                >
-                  <div className="text-3xl font-bold font-serif text-primary mb-2">{value}</div>
-                  <div className="text-muted-foreground text-sm">{label}</div>
-                </div>
-              ))}
+            <div className="relative">
+              <img
+                src="/images/team-meeting.png"
+                alt="Realtical team at work"
+                className="w-full h-80 object-cover rounded-2xl shadow-2xl"
+              />
+              <div className="absolute -bottom-5 -left-5 bg-white border border-border rounded-2xl p-5 shadow-xl max-w-[200px]">
+                <div className="text-3xl font-bold font-serif text-primary mb-1">5+</div>
+                <div className="text-muted-foreground text-xs">Years of Real Estate Marketing Excellence</div>
+              </div>
+              <div className="absolute -top-5 -right-5 bg-[#0a1628] border border-[#e8b84b]/30 rounded-2xl p-5 shadow-xl">
+                <div className="text-3xl font-bold font-serif text-[#e8b84b] mb-1">120+</div>
+                <div className="text-white/60 text-xs">Builder Projects</div>
+              </div>
             </div>
+          </div>
+
+          {/* Stats row */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-16">
+            {[
+              { value: "5+", label: "Years Experience" },
+              { value: "120+", label: "Builder Projects Served" },
+              { value: "2,400+", label: "Qualified Leads Generated" },
+              { value: "28", label: "Expert Team Members" },
+            ].map(({ value, label }) => (
+              <div key={label} className="bg-gray-50 border border-border rounded-2xl p-6 text-center hover:border-primary/30 hover:shadow-md transition-all">
+                <div className="text-3xl font-bold font-serif text-primary mb-2">{value}</div>
+                <div className="text-muted-foreground text-sm">{label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Values */}
+      {/* ─── VALUES ─────────────────────────────────────────── */}
       <section className="section-padding bg-gray-50/70">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Our Values</span>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#0d1b38] mt-3">
               The Principles That Drive{" "}
-              <span className="text-primary">Every Decision</span>
+              <span className="text-primary italic">Every Decision</span>
             </h2>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map(({ icon: Icon, title, description }) => (
               <div
@@ -151,7 +171,7 @@ export default function About() {
                 data-testid={`card-value-${title.toLowerCase().replace(/\s+/g, "-")}`}
                 className="bg-white rounded-2xl p-7 border border-border hover:shadow-lg hover:border-primary/30 transition-all text-center"
               >
-                <div className="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center mx-auto mb-5">
+                <div className="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center mx-auto mb-5 shadow-md shadow-primary/20">
                   <Icon size={22} className="text-white" />
                 </div>
                 <h3 className="text-base font-bold font-serif text-[#0d1b38] mb-3">{title}</h3>
@@ -162,17 +182,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* ─── TEAM ───────────────────────────────────────────── */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">The Team</span>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#0d1b38] mt-3">
-              Real Estate Marketing{" "}
-              <span className="text-primary">Veterans</span>
+              Real Estate Marketing <span className="text-primary italic">Veterans</span>
             </h2>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map(({ name, role, bio, avatar, color }) => (
               <div
@@ -180,13 +198,16 @@ export default function About() {
                 data-testid={`card-team-${name.toLowerCase().replace(/\s+/g, "-")}`}
                 className="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all group"
               >
-                <div className={`h-32 bg-gradient-to-br ${color} flex items-center justify-center`}>
-                  <div className="w-16 h-16 rounded-full bg-white/20 border-2 border-white/30 flex items-center justify-center">
+                <div className={`h-36 bg-gradient-to-br ${color} flex items-center justify-center relative`}>
+                  <div className="absolute inset-0 opacity-20"
+                    style={{ backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.3) 0%, transparent 70%)` }}
+                  />
+                  <div className="w-16 h-16 rounded-full bg-white/20 border-2 border-white/40 flex items-center justify-center shadow-xl relative z-10">
                     <span className="text-white text-xl font-bold font-serif">{avatar}</span>
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="font-bold font-serif text-[#0d1b38] mb-0.5">{name}</h3>
+                  <h3 className="font-bold font-serif text-[#0d1b38] mb-0.5 group-hover:text-primary transition-colors">{name}</h3>
                   <div className="text-primary text-xs font-semibold mb-3">{role}</div>
                   <p className="text-muted-foreground text-xs leading-relaxed">{bio}</p>
                 </div>
@@ -196,30 +217,67 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* ─── OFFICE PHOTO ───────────────────────────────────── */}
+      <section className="section-padding bg-gray-50/70">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <span className="text-primary text-sm font-bold uppercase tracking-widest">Our Workspace</span>
+              <h2 className="text-3xl font-bold font-serif text-[#0d1b38] mt-3 mb-5">
+                Built for Focus,{" "}
+                <span className="text-primary italic">Driven by Results</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Our Mumbai headquarters is designed for deep work — a space where our strategists, creatives, and analysts collaborate to build marketing systems that move the needle for builders across India.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "Real-time campaign monitoring dashboards",
+                  "Weekly performance review war rooms",
+                  "Dedicated creative studio for ad production",
+                  "Offices in Mumbai, Pune, and Bengaluru",
+                ].map((point) => (
+                  <div key={point} className="flex items-center gap-3 text-sm text-foreground/78">
+                    <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
+                      <Check size={11} className="text-primary" />
+                    </div>
+                    {point}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="/images/about-office.png"
+                alt="Realtical office"
+                className="w-full h-72 object-cover rounded-2xl shadow-xl"
+              />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TIMELINE ───────────────────────────────────────── */}
       <section className="section-padding bg-[#0a1628] text-white">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Our Journey</span>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white mt-3">
-              5 Years of{" "}
-              <span className="text-[#e8b84b]">Growth & Impact</span>
+              5 Years of <span className="text-[#e8b84b] italic">Growth & Impact</span>
             </h2>
           </div>
-
           <div className="max-w-3xl mx-auto">
             {milestones.map(({ year, event }, index) => (
               <div key={year} className="flex gap-6 mb-8 last:mb-0">
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center shrink-0 shadow-lg shadow-primary/30">
                     <span className="text-white text-xs font-bold">{year}</span>
                   </div>
-                  {index < milestones.length - 1 && (
-                    <div className="w-0.5 flex-1 bg-white/10 mt-3" />
-                  )}
+                  {index < milestones.length - 1 && <div className="w-px flex-1 bg-white/10 mt-3" />}
                 </div>
-                <div className="pb-8 last:pb-0 pt-2.5">
-                  <p className="text-white/75 text-sm leading-relaxed">{event}</p>
+                <div className="pb-8 last:pb-0 pt-3">
+                  <p className="text-white/72 text-sm leading-relaxed">{event}</p>
                 </div>
               </div>
             ))}
@@ -227,12 +285,11 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ─── CTA ────────────────────────────────────────────── */}
       <section className="section-padding bg-white">
         <div className="container-custom text-center">
           <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#0d1b38] mb-4">
-            Ready to Work with{" "}
-            <span className="text-primary">Our Team?</span>
+            Ready to Work with <span className="text-primary italic">Our Team?</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
             Book a free strategy call and see why 120+ builders trust Realtical with their marketing.

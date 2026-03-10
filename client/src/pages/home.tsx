@@ -13,18 +13,18 @@ import {
   Users,
   Target,
   Building2,
-  Phone,
   BarChart3,
   Zap,
   Shield,
   Award,
   ChevronRight,
   Quote,
+  Play,
 } from "lucide-react";
 
 const stats = [
   { value: "2,400+", label: "Qualified Leads Generated" },
-  { value: "₹850 Cr+", label: "Worth of Property Sales Enabled" },
+  { value: "₹850 Cr+", label: "Worth of Property Sales" },
   { value: "120+", label: "Builder Projects Served" },
   { value: "92%", label: "Client Retention Rate" },
 ];
@@ -34,31 +34,37 @@ const services = [
     icon: Target,
     title: "Real Estate Lead Generation",
     description: "Precision-targeted campaigns that deliver property buyers and investors directly to your sales team.",
+    img: "/images/case-study-1.png",
   },
   {
     icon: BarChart3,
     title: "Meta Ads Management",
-    description: "High-converting Facebook and Instagram ad campaigns crafted specifically for real estate projects.",
+    description: "High-converting Facebook & Instagram campaigns crafted specifically for real estate projects.",
+    img: "/images/service-meta-ads.png",
   },
   {
     icon: TrendingUp,
     title: "Google Ads Management",
     description: "Search and display ads that capture buyers actively looking for properties like yours.",
+    img: "/images/service-google-ads.png",
   },
   {
     icon: Zap,
     title: "Landing Page Design",
     description: "Conversion-optimized landing pages that turn website visitors into genuine property inquiries.",
+    img: "/images/service-landing-page.png",
   },
   {
     icon: Shield,
     title: "CRM Setup & Integration",
     description: "Complete CRM configuration so your team never misses a lead or a follow-up opportunity.",
+    img: "/images/service-crm.png",
   },
   {
     icon: Building2,
     title: "Full Marketing Strategy",
     description: "End-to-end digital marketing blueprint tailored specifically for your real estate project.",
+    img: "/images/case-study-3.png",
   },
 ];
 
@@ -110,21 +116,21 @@ const blogPosts = [
     title: "How Top Builders Generate 500+ Leads/Month Using Meta Ads",
     excerpt: "Discover the exact campaign structure, targeting approach, and creative strategy that consistently delivers qualified property buyers.",
     readTime: "6 min read",
-    href: "/blog",
+    img: "/images/service-meta-ads.png",
   },
   {
     category: "Strategy",
     title: "The Real Estate Marketing Funnel That Actually Converts",
     excerpt: "Most agencies build campaigns. We build systems. Here's the 5-stage funnel we use for every builder client.",
     readTime: "8 min read",
-    href: "/blog",
+    img: "/images/blog-featured.png",
   },
   {
     category: "CRM",
     title: "Why 70% of Real Estate Leads Get Wasted (And How to Fix It)",
     excerpt: "A leaky CRM costs builders crores in lost sales. Here's the exact setup we implement for all our clients.",
     readTime: "5 min read",
-    href: "/blog",
+    img: "/images/service-crm.png",
   },
 ];
 
@@ -138,51 +144,38 @@ export default function Home() {
       return res.json();
     },
     onSuccess: () => {
-      toast({
-        title: "Request Received!",
-        description: "Our team will reach out within 24 hours.",
-      });
+      toast({ title: "Request Received!", description: "Our team will reach out within 24 hours." });
       setEmail("");
-    },
-    onError: () => {
-      toast({
-        variant: "destructive",
-        title: "Something went wrong",
-        description: "Please try again or WhatsApp us directly.",
-      });
     },
   });
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+
+      {/* ─── HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80')`,
-          }}
+        <img
+          src="/images/hero-bg.png"
+          alt="Mumbai skyline"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#060e1f]/95 via-[#0d1b38]/85 to-[#0a1628]/90" />
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(circle at 30% 60%, rgba(196,146,31,0.3) 0%, transparent 60%), radial-gradient(circle at 70% 30%, rgba(196,146,31,0.15) 0%, transparent 50%)`,
-          }}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#050d1e]/96 via-[#0a1628]/88 to-[#0d2040]/90" />
+        <div className="absolute inset-0 opacity-25"
+          style={{ backgroundImage: `radial-gradient(ellipse at 30% 70%, rgba(196,146,31,0.35) 0%, transparent 55%), radial-gradient(ellipse at 75% 25%, rgba(196,146,31,0.18) 0%, transparent 50%)` }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-[#e8b84b]/30 text-[#e8b84b] text-xs font-semibold uppercase tracking-widest px-5 py-2 rounded-full mb-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
+          <div className="inline-flex items-center gap-2 bg-[#e8b84b]/12 backdrop-blur-sm border border-[#e8b84b]/35 text-[#e8b84b] text-xs font-semibold uppercase tracking-widest px-5 py-2 rounded-full mb-8">
             <Award size={12} />
             India's Premium Real Estate Marketing Agency
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold font-serif text-white leading-tight mb-6 max-w-5xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-[4.5rem] font-bold font-serif text-white leading-[1.1] mb-6 max-w-5xl mx-auto">
             Fill Your Property Pipeline with{" "}
-            <span className="text-[#e8b84b]">Qualified Buyers</span>
+            <span className="text-[#e8b84b] italic">Qualified Buyers</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/68 max-w-2xl mx-auto mb-10 leading-relaxed">
             We help real estate builders generate high-quality leads through precision-targeted digital marketing — Meta Ads, Google Ads, landing pages, and CRM automation.
           </p>
 
@@ -204,40 +197,54 @@ export default function Home() {
                 variant="outline"
                 className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-base font-semibold px-8 py-6 backdrop-blur-sm"
               >
+                <Play size={15} className="mr-2 fill-white" />
                 See Our Results
               </Button>
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {/* Stats */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto">
             {stats.map(({ value, label }) => (
               <div
                 key={label}
                 data-testid={`stat-${label.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`}
-                className="bg-white/8 backdrop-blur-sm border border-white/15 rounded-2xl p-4 sm:p-5"
+                className="bg-white/8 backdrop-blur-sm border border-white/12 rounded-2xl p-4 sm:p-5 hover:border-[#e8b84b]/40 transition-all"
               >
                 <div className="text-2xl sm:text-3xl font-bold text-[#e8b84b] font-serif mb-1">{value}</div>
-                <div className="text-white/60 text-xs sm:text-sm">{label}</div>
+                <div className="text-white/55 text-xs sm:text-sm leading-tight">{label}</div>
               </div>
             ))}
           </div>
         </div>
 
+        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
-            <div className="w-1 h-2 bg-white/50 rounded-full" />
+          <div className="w-6 h-10 rounded-full border-2 border-white/25 flex justify-center pt-2">
+            <div className="w-1 h-2 bg-white/45 rounded-full" />
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* ─── TRUSTED BY ────────────────────────────────────────── */}
+      <section className="bg-[#0a1628] border-y border-white/8 py-6">
+        <div className="container-custom">
+          <div className="flex flex-wrap items-center justify-center gap-8 opacity-50">
+            {["Prestige Spaces", "Skyline Developers", "Greenfield Realty", "Nexus Housing", "Pinnacle Group", "Urban Nest"].map((name) => (
+              <span key={name} className="text-white text-sm font-bold uppercase tracking-widest">{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SERVICES ──────────────────────────────────────────── */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">What We Do</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-[#0d1b38] mt-3 mb-4">
               Everything You Need to{" "}
-              <span className="text-primary">Dominate</span> Your Market
+              <span className="text-primary italic">Dominate</span> Your Market
             </h2>
             <p className="text-muted-foreground text-lg">
               A complete digital marketing engine built exclusively for real estate builders and developers.
@@ -245,19 +252,31 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, description }) => (
+            {services.map(({ icon: Icon, title, description, img }) => (
               <div
                 key={title}
                 data-testid={`card-service-${title.toLowerCase().replace(/\s+/g, "-").slice(0, 30)}`}
-                className="group p-7 rounded-2xl border border-border bg-white hover:border-primary/30 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="group rounded-2xl border border-border bg-white hover:border-primary/30 hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <Icon size={22} className="text-primary group-hover:text-white transition-colors" />
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={img}
+                    alt={title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/70 to-transparent" />
+                  <div className="absolute bottom-3 left-4">
+                    <div className="w-9 h-9 rounded-lg bg-[#e8b84b] flex items-center justify-center shadow-lg">
+                      <Icon size={18} className="text-white" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold font-serif text-[#0d1b38] mb-3">{title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
-                <div className="mt-5 flex items-center gap-1 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn more <ChevronRight size={14} />
+                <div className="p-5">
+                  <h3 className="text-base font-bold font-serif text-[#0d1b38] mb-2 group-hover:text-primary transition-colors">{title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+                  <div className="mt-4 flex items-center gap-1 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn more <ChevronRight size={14} />
+                  </div>
                 </div>
               </div>
             ))}
@@ -277,27 +296,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Realtical */}
-      <section className="section-padding bg-[#0a1628] text-white overflow-hidden relative">
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `radial-gradient(circle at 80% 20%, rgba(196,146,31,0.4) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(196,146,31,0.2) 0%, transparent 50%)`,
-          }}
-        />
+      {/* ─── WHY REALTICAL ─────────────────────────────────────── */}
+      <section className="section-padding overflow-hidden relative">
+        <div className="absolute inset-0">
+          <img src="/images/about-office.png" alt="Office" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#0a1628]/93" />
+        </div>
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
               <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Why Realtical</span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-white mt-3 mb-6">
                 We Don't Just Run Ads.{" "}
-                <span className="text-[#e8b84b]">We Build Lead Machines.</span>
+                <span className="text-[#e8b84b] italic">We Build Lead Machines.</span>
               </h2>
               <p className="text-white/65 text-lg leading-relaxed mb-8">
                 Generic marketing agencies don't understand real estate. We do. Every campaign we run is built on 5+ years of real estate-specific data, buyer psychology, and what actually converts in your market.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 {[
                   "Real estate-exclusive agency — no distractions",
                   "Dedicated account manager per project",
@@ -307,19 +324,16 @@ export default function Home() {
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-[#e8b84b] flex items-center justify-center shrink-0 mt-0.5">
-                      <Check size={12} className="text-[#0a1628]" />
+                      <Check size={11} className="text-[#0a1628] font-bold" />
                     </div>
-                    <span className="text-white/80 text-sm">{point}</span>
+                    <span className="text-white/78 text-sm">{point}</span>
                   </div>
                 ))}
               </div>
 
               <div className="mt-10">
                 <Link href="/about">
-                  <Button
-                    data-testid="button-about-realtical"
-                    className="gold-gradient text-white border-0 font-semibold px-6"
-                  >
+                  <Button className="gold-gradient text-white border-0 font-semibold px-6">
                     About Realtical <ArrowRight className="ml-2" size={16} />
                   </Button>
                 </Link>
@@ -330,13 +344,10 @@ export default function Home() {
               {[
                 { value: "7 Days", label: "Campaign Go-Live Time" },
                 { value: "₹180", label: "Average Cost Per Lead" },
-                { value: "18%", label: "Average Landing Page CVR" },
+                { value: "18%", label: "Landing Page Conv. Rate" },
                 { value: "45 Days", label: "Average ROI Breakeven" },
               ].map(({ value, label }) => (
-                <div
-                  key={label}
-                  className="bg-white/8 border border-white/10 rounded-2xl p-6 hover:border-[#e8b84b]/40 hover:bg-white/12 transition-all"
-                >
+                <div key={label} className="bg-white/8 border border-white/10 rounded-2xl p-6 hover:border-[#e8b84b]/40 hover:bg-white/12 transition-all">
                   <div className="text-3xl font-bold text-[#e8b84b] font-serif mb-2">{value}</div>
                   <div className="text-white/60 text-sm">{label}</div>
                 </div>
@@ -346,23 +357,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* ─── HOW WE WORK ───────────────────────────────────────── */}
       <section className="section-padding bg-gray-50/70">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">How We Work</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-[#0d1b38] mt-3 mb-4">
               From Onboarding to{" "}
-              <span className="text-primary">Results in 7 Days</span>
+              <span className="text-primary italic">Results in 7 Days</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-12 left-[33%] right-[33%] h-0.5 bg-gradient-to-r from-primary/30 via-primary to-primary/30" />
-
+            <div className="hidden md:block absolute top-12 left-[33%] right-[33%] h-px bg-gradient-to-r from-primary/20 via-primary/60 to-primary/20" />
             {process.map(({ step, title, description }) => (
               <div key={step} className="relative text-center">
-                <div className="w-20 h-20 rounded-2xl gold-gradient flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div className="w-20 h-20 rounded-2xl gold-gradient flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/25">
                   <span className="text-white text-2xl font-bold font-serif">{step}</span>
                 </div>
                 <h3 className="text-xl font-bold font-serif text-[#0d1b38] mb-3">{title}</h3>
@@ -373,14 +383,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* ─── TESTIMONIALS ──────────────────────────────────────── */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Client Testimonials</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-[#0d1b38] mt-3 mb-4">
               Trusted by India's{" "}
-              <span className="text-primary">Leading Builders</span>
+              <span className="text-primary italic">Leading Builders</span>
             </h2>
           </div>
 
@@ -389,17 +399,17 @@ export default function Home() {
               <div
                 key={name}
                 data-testid={`card-testimonial-${name.toLowerCase().replace(/\s+/g, "-")}`}
-                className="bg-gray-50 rounded-2xl p-7 border border-border hover:shadow-lg transition-shadow relative"
+                className="bg-gray-50 rounded-2xl p-7 border border-border hover:shadow-xl transition-shadow relative group"
               >
-                <Quote size={32} className="text-primary/20 absolute top-6 right-6" />
+                <Quote size={36} className="text-primary/12 absolute top-5 right-5 group-hover:text-primary/20 transition-colors" />
                 <div className="flex items-center gap-1 mb-4">
                   {Array.from({ length: rating }).map((_, i) => (
                     <Star key={i} size={14} className="fill-[#e8b84b] text-[#e8b84b]" />
                   ))}
                 </div>
-                <p className="text-foreground/75 text-sm leading-relaxed mb-6">{content}</p>
+                <p className="text-foreground/72 text-sm leading-relaxed mb-6 italic">{content}</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-white text-sm font-bold">
+                  <div className="w-11 h-11 rounded-full gold-gradient flex items-center justify-center text-white text-sm font-bold shadow-md">
                     {avatar}
                   </div>
                   <div>
@@ -413,22 +423,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Blog Preview */}
+      {/* ─── BLOG PREVIEW ──────────────────────────────────────── */}
       <section className="section-padding bg-gray-50/70">
         <div className="container-custom">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
             <div>
               <span className="text-primary text-sm font-bold uppercase tracking-widest">Insights</span>
               <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#0d1b38] mt-2">
-                Real Estate Marketing{" "}
-                <span className="text-primary">Insights</span>
+                Real Estate Marketing <span className="text-primary italic">Insights</span>
               </h2>
             </div>
             <Link href="/blog">
               <Button
                 data-testid="button-view-all-blog"
                 variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-white shrink-0"
+                className="border-primary text-primary hover:bg-primary hover:text-white shrink-0 font-semibold"
               >
                 View All Posts <ArrowRight className="ml-2" size={14} />
               </Button>
@@ -436,19 +445,24 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {blogPosts.map(({ category, title, excerpt, readTime, href }) => (
-              <Link key={title} href={href}>
+            {blogPosts.map(({ category, title, excerpt, readTime, img }) => (
+              <Link key={title} href="/blog">
                 <div
                   data-testid={`card-blog-${title.toLowerCase().replace(/\s+/g, "-").slice(0, 30)}`}
                   className="bg-white rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300 group cursor-pointer h-full"
                 >
-                  <div className="h-40 bg-gradient-to-br from-[#0d1b38] to-[#152242] flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-30" style={{ backgroundImage: `radial-gradient(circle at 50% 50%, rgba(196,146,31,0.4) 0%, transparent 70%)` }} />
-                    <span className="text-[#e8b84b] text-xs font-bold uppercase tracking-widest px-4 py-2 border border-[#e8b84b]/40 rounded-full relative z-10">
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={img}
+                      alt={title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/65 via-transparent to-transparent" />
+                    <span className="absolute bottom-3 left-4 text-[#e8b84b] text-xs font-bold uppercase tracking-widest px-3 py-1 bg-[#0a1628]/70 backdrop-blur-sm rounded-full border border-[#e8b84b]/40">
                       {category}
                     </span>
                   </div>
-                  <div className="p-6">
+                  <div className="p-5">
                     <h3 className="font-bold font-serif text-[#0d1b38] text-base mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2">{title}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-2">{excerpt}</p>
                     <div className="flex items-center gap-1 text-primary text-sm font-semibold">
@@ -462,21 +476,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-[#0a1628] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15" style={{ backgroundImage: `radial-gradient(circle at 50% 50%, rgba(196,146,31,0.5) 0%, transparent 70%)` }} />
+      {/* ─── FINAL CTA ─────────────────────────────────────────── */}
+      <section className="relative section-padding overflow-hidden">
+        <img
+          src="/images/about-hero.png"
+          alt="Real estate development"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#060e1f]/92" />
+        <div className="absolute inset-0 opacity-20"
+          style={{ backgroundImage: `radial-gradient(circle at 50% 50%, rgba(196,146,31,0.6) 0%, transparent 65%)` }}
+        />
         <div className="container-custom relative z-10 text-center">
           <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Get Started Today</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-white mt-4 mb-5 max-w-3xl mx-auto">
             Ready to Fill Your Sales Pipeline with{" "}
-            <span className="text-[#e8b84b]">Qualified Leads?</span>
+            <span className="text-[#e8b84b] italic">Qualified Leads?</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
-            Book a free 30-minute strategy call with our team. We'll analyze your project and show you exactly how many leads we can generate.
+            Book a free 30-minute strategy call. We'll analyze your project and show you exactly how many leads we can generate.
           </p>
 
-          <div className="bg-white/8 backdrop-blur-sm border border-white/15 rounded-2xl p-8 max-w-xl mx-auto">
-            <p className="text-white/80 text-sm font-semibold mb-5">Enter your email to get started</p>
+          <div className="bg-white/8 backdrop-blur-sm border border-white/12 rounded-2xl p-8 max-w-xl mx-auto">
+            <p className="text-white/75 text-sm font-semibold mb-5">Enter your email to get started</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Input
                 data-testid="input-cta-email"
@@ -495,9 +517,7 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <p className="text-white/35 text-xs mt-4">
-              No credit card required. Free 30-minute consultation.
-            </p>
+            <p className="text-white/30 text-xs mt-4">No credit card required. Free 30-minute consultation.</p>
           </div>
         </div>
       </section>

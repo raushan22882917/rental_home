@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Clock, ChevronRight, ArrowRight, Tag } from "lucide-react";
+import { Search, Clock, ChevronRight, ArrowRight } from "lucide-react";
 
 const posts = [
   {
@@ -11,11 +11,10 @@ const posts = [
     title: "How Top Builders Generate 500+ Leads/Month Using Meta Ads",
     excerpt:
       "Discover the exact campaign structure, targeting approach, and creative strategy that consistently delivers 500+ qualified property buyers every month — without blowing your budget.",
-    content: "Full post coming soon.",
     readTime: "6 min read",
     date: "March 5, 2026",
     featured: true,
-    color: "from-[#0d1b38] to-[#1a2d5a]",
+    img: "/images/service-meta-ads.png",
   },
   {
     id: 2,
@@ -23,11 +22,10 @@ const posts = [
     title: "The Real Estate Marketing Funnel That Actually Converts",
     excerpt:
       "Most agencies build campaigns. We build systems. Here's the 5-stage funnel we use for every builder client — from awareness to booking.",
-    content: "Full post coming soon.",
     readTime: "8 min read",
     date: "February 28, 2026",
     featured: false,
-    color: "from-[#c4921f] to-[#8b6614]",
+    img: "/images/blog-featured.png",
   },
   {
     id: 3,
@@ -35,11 +33,10 @@ const posts = [
     title: "Why 70% of Real Estate Leads Get Wasted (And How to Fix It)",
     excerpt:
       "A leaky CRM costs builders crores in lost sales. Here's the exact setup we implement for all our clients — and how you can do it too.",
-    content: "Full post coming soon.",
     readTime: "5 min read",
     date: "February 20, 2026",
     featured: false,
-    color: "from-[#7c3aed] to-[#4c1d95]",
+    img: "/images/service-crm.png",
   },
   {
     id: 4,
@@ -47,11 +44,10 @@ const posts = [
     title: "The Complete Guide to Google Ads for Real Estate Builders in 2026",
     excerpt:
       "Search intent is the highest-quality signal in digital marketing. Here's how to capture it effectively with Google Ads specifically for real estate.",
-    content: "Full post coming soon.",
     readTime: "10 min read",
     date: "February 12, 2026",
     featured: false,
-    color: "from-[#34a853] to-[#0d6e2d]",
+    img: "/images/service-google-ads.png",
   },
   {
     id: 5,
@@ -59,11 +55,10 @@ const posts = [
     title: "7 Landing Page Secrets That Tripled Our Conversion Rates",
     excerpt:
       "We've tested 200+ real estate landing pages. Here are the 7 elements that consistently double or triple conversion rates for property developers.",
-    content: "Full post coming soon.",
     readTime: "7 min read",
     date: "February 5, 2026",
     featured: false,
-    color: "from-[#1877f2] to-[#0d3580]",
+    img: "/images/service-landing-page.png",
   },
   {
     id: 6,
@@ -71,11 +66,10 @@ const posts = [
     title: "Real Estate Digital Marketing Trends to Watch in 2026",
     excerpt:
       "From AI-generated creatives to WhatsApp automation, here are the trends reshaping how Indian builders attract and convert buyers.",
-    content: "Full post coming soon.",
     readTime: "5 min read",
     date: "January 28, 2026",
     featured: false,
-    color: "from-[#0a1628] to-[#152242]",
+    img: "/images/case-study-3.png",
   },
 ];
 
@@ -85,7 +79,7 @@ export default function Blog() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const featured = posts.find((p) => p.featured);
+  const featured = posts.find((p) => p.featured)!;
   const rest = posts.filter((p) => !p.featured);
 
   const filtered = rest.filter((p) => {
@@ -99,17 +93,18 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-[#0a1628] relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-15"
+
+      {/* ─── HERO ───────────────────────────────────────────── */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <img src="/images/blog-featured.png" alt="Marketing insights" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#060e1f]/97 via-[#0a1628]/93 to-[#060e1f]/90" />
+        <div className="absolute inset-0 opacity-20"
           style={{ backgroundImage: `radial-gradient(circle at 50% 60%, rgba(196,146,31,0.5) 0%, transparent 60%)` }}
         />
         <div className="container-custom relative z-10 text-center">
           <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Insights</span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-3xl mx-auto">
-            Real Estate Marketing{" "}
-            <span className="text-[#e8b84b]">Insights</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-3xl mx-auto leading-tight">
+            Real Estate Marketing <span className="text-[#e8b84b] italic">Insights</span>
           </h1>
           <p className="text-white/65 text-lg max-w-xl mx-auto mb-8">
             Actionable strategies, deep dives, and industry insights for real estate builders and developers.
@@ -130,47 +125,48 @@ export default function Blog() {
 
       <section className="section-padding bg-white">
         <div className="container-custom">
-          {/* Featured Post */}
-          {featured && (
-            <div
-              data-testid="card-blog-featured"
-              className="bg-[#0a1628] rounded-3xl overflow-hidden mb-12 group cursor-pointer hover:shadow-2xl transition-all"
-            >
-              <div className="grid lg:grid-cols-2">
-                <div className={`h-72 lg:h-full bg-gradient-to-br ${featured.color} min-h-[200px] flex items-center justify-center relative overflow-hidden`}>
-                  <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `radial-gradient(circle at 50% 50%, rgba(232,184,75,0.4) 0%, transparent 70%)` }} />
-                  <span className="text-[#e8b84b] text-xs font-bold uppercase tracking-widest px-4 py-2 border border-[#e8b84b]/40 rounded-full relative z-10">
-                    Featured Article
-                  </span>
-                </div>
-                <div className="p-8 lg:p-10 flex flex-col justify-center">
-                  <div className="inline-flex items-center gap-1 text-[#e8b84b] text-xs font-bold uppercase tracking-widest mb-4">
-                    <Tag size={10} />
-                    {featured.category}
+
+          {/* ─── FEATURED ─────────────────────────────────────── */}
+          <div
+            data-testid="card-blog-featured"
+            className="rounded-3xl overflow-hidden mb-12 group cursor-pointer hover:shadow-2xl transition-all border border-border"
+          >
+            <div className="grid lg:grid-cols-2">
+              <div className="relative h-72 lg:h-auto overflow-hidden">
+                <img
+                  src={featured.img}
+                  alt={featured.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/50 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-transparent" />
+                <span className="absolute top-5 left-5 bg-[#e8b84b] text-[#0a1628] text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
+                  Featured Article
+                </span>
+              </div>
+              <div className="p-8 lg:p-10 flex flex-col justify-center bg-[#0a1628]">
+                <span className="text-[#e8b84b] text-xs font-bold uppercase tracking-widest mb-4">{featured.category}</span>
+                <h2 className="text-2xl lg:text-3xl font-bold font-serif text-white mb-4 group-hover:text-[#e8b84b] transition-colors leading-snug">
+                  {featured.title}
+                </h2>
+                <p className="text-white/55 text-sm leading-relaxed mb-6">{featured.excerpt}</p>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3 text-white/35 text-xs">
+                    <span>{featured.date}</span>
+                    <span>·</span>
+                    <div className="flex items-center gap-1">
+                      <Clock size={10} />
+                      {featured.readTime}
+                    </div>
                   </div>
-                  <h2 className="text-2xl lg:text-3xl font-bold font-serif text-white mb-4 group-hover:text-[#e8b84b] transition-colors">
-                    {featured.title}
-                  </h2>
-                  <p className="text-white/60 text-sm leading-relaxed mb-6">{featured.excerpt}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3 text-white/40 text-xs">
-                      <span>{featured.date}</span>
-                      <span>·</span>
-                      <div className="flex items-center gap-1">
-                        <Clock size={10} />
-                        {featured.readTime}
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 text-[#e8b84b] text-sm font-semibold">
-                      Read more <ChevronRight size={14} />
-                    </div>
+                  <div className="flex items-center gap-1 text-[#e8b84b] text-sm font-semibold">
+                    Read more <ChevronRight size={14} />
                   </div>
                 </div>
               </div>
             </div>
-          )}
+          </div>
 
-          {/* Category Filter */}
+          {/* ─── CATEGORY FILTER ──────────────────────────────── */}
           <div className="flex flex-wrap gap-2 mb-8">
             {categories.map((cat) => (
               <button
@@ -180,7 +176,7 @@ export default function Blog() {
                 className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
                   activeCategory === cat
                     ? "gold-gradient text-white shadow-md"
-                    : "bg-gray-100 text-muted-foreground hover:border-primary hover:text-primary border border-transparent"
+                    : "bg-gray-100 text-muted-foreground hover:text-primary border border-transparent hover:border-primary/30"
                 }`}
               >
                 {cat}
@@ -188,32 +184,40 @@ export default function Blog() {
             ))}
           </div>
 
-          {/* Posts Grid */}
+          {/* ─── POSTS GRID ───────────────────────────────────── */}
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map(({ id, category, title, excerpt, readTime, date, color }) => (
+              {filtered.map(({ id, category, title, excerpt, readTime, date, img }) => (
                 <div
                   key={id}
                   data-testid={`card-blog-${id}`}
-                  className="bg-white rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all group cursor-pointer"
+                  className="bg-white rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col"
                 >
-                  <div className={`h-40 bg-gradient-to-br ${color} flex items-center justify-center relative overflow-hidden`}>
-                    <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.3) 0%, transparent 70%)` }} />
-                    <span className="text-white/90 text-xs font-bold uppercase tracking-widest px-4 py-2 border border-white/30 rounded-full relative z-10">
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={img}
+                      alt={title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-transparent" />
+                    <span className="absolute bottom-3 left-4 text-[#e8b84b] text-xs font-bold uppercase tracking-widest px-3 py-1 bg-[#0a1628]/70 backdrop-blur-sm rounded-full border border-[#e8b84b]/30">
                       {category}
                     </span>
                   </div>
-                  <div className="p-6">
-                    <h3 className="font-bold font-serif text-[#0d1b38] text-base mb-2 leading-snug group-hover:text-primary transition-colors">
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="font-bold font-serif text-[#0d1b38] text-base mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2 flex-1">
                       {title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-2">{excerpt}</p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mt-auto">
                       <div className="flex items-center gap-2 text-muted-foreground text-xs">
                         <Clock size={10} />
                         {readTime}
                         <span>·</span>
                         <span>{date}</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-primary text-xs font-semibold">
+                        Read <ChevronRight size={12} />
                       </div>
                     </div>
                   </div>
@@ -228,14 +232,15 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="section-padding bg-[#0a1628] text-white">
-        <div className="container-custom">
+      {/* ─── NEWSLETTER ─────────────────────────────────────── */}
+      <section className="relative section-padding overflow-hidden">
+        <img src="/images/service-meta-ads.png" alt="Digital marketing" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#060e1f]/93" />
+        <div className="container-custom relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Newsletter</span>
             <h2 className="text-3xl font-bold font-serif text-white mt-3 mb-4">
-              Get Weekly Real Estate{" "}
-              <span className="text-[#e8b84b]">Marketing Tips</span>
+              Get Weekly Real Estate <span className="text-[#e8b84b] italic">Marketing Tips</span>
             </h2>
             <p className="text-white/60 mb-8">
               Join 2,000+ builders and developers who read our weekly insights on real estate marketing.
@@ -251,7 +256,7 @@ export default function Blog() {
                 data-testid="button-newsletter-subscribe"
                 className="gold-gradient text-white border-0 font-semibold whitespace-nowrap"
               >
-                Subscribe
+                Subscribe <ArrowRight className="ml-1" size={14} />
               </Button>
             </div>
             <p className="text-white/30 text-xs mt-4">No spam. Unsubscribe anytime.</p>

@@ -1,8 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowRight, Target, BarChart3, TrendingUp, Zap, Shield, Building2,
-  Check, ChevronRight,
+  ArrowRight, Target, BarChart3, TrendingUp, Zap, Shield, Building2, Check,
 } from "lucide-react";
 
 const services = [
@@ -20,7 +19,7 @@ const services = [
       "Real-time lead tracking dashboard",
     ],
     results: "Avg. 200–500 qualified leads/month",
-    color: "from-[#0d1b38] to-[#1a2d5a]",
+    img: "/images/case-study-1.png",
   },
   {
     icon: BarChart3,
@@ -36,7 +35,7 @@ const services = [
       "Weekly performance reports",
     ],
     results: "Avg. ₹180 cost per qualified lead",
-    color: "from-[#1877f2] to-[#0d3580]",
+    img: "/images/service-meta-ads.png",
   },
   {
     icon: TrendingUp,
@@ -52,7 +51,7 @@ const services = [
       "Monthly budget optimization",
     ],
     results: "Avg. 25% lower cost-per-click vs benchmarks",
-    color: "from-[#34a853] to-[#0d6e2d]",
+    img: "/images/service-google-ads.png",
   },
   {
     icon: Zap,
@@ -68,7 +67,7 @@ const services = [
       "CRM form integration",
     ],
     results: "Avg. 18% conversion rate (3x industry avg.)",
-    color: "from-[#c4921f] to-[#8b6614]",
+    img: "/images/service-landing-page.png",
   },
   {
     icon: Shield,
@@ -84,7 +83,7 @@ const services = [
       "Monthly CRM health audit",
     ],
     results: "Avg. 40% improvement in lead-to-visit conversion",
-    color: "from-[#7c3aed] to-[#4c1d95]",
+    img: "/images/service-crm.png",
   },
   {
     icon: Building2,
@@ -100,7 +99,7 @@ const services = [
       "Bi-weekly strategy reviews",
     ],
     results: "Complete outsourced marketing for builders",
-    color: "from-[#0a1628] to-[#0d1b38]",
+    img: "/images/case-study-3.png",
   },
 ];
 
@@ -157,17 +156,23 @@ const packages = [
 export default function Services() {
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-[#0a1628] relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-15"
+
+      {/* ─── HERO ───────────────────────────────────────────── */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <img
+          src="/images/service-meta-ads.png"
+          alt="Digital marketing services"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#060e1f]/97 via-[#0a1628]/93 to-[#060e1f]/90" />
+        <div className="absolute inset-0 opacity-20"
           style={{ backgroundImage: `radial-gradient(circle at 60% 40%, rgba(196,146,31,0.5) 0%, transparent 60%)` }}
         />
         <div className="container-custom relative z-10 text-center">
           <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Our Services</span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-4xl mx-auto leading-tight">
             A Complete Marketing Engine for{" "}
-            <span className="text-[#e8b84b]">Real Estate Builders</span>
+            <span className="text-[#e8b84b] italic">Real Estate Builders</span>
           </h1>
           <p className="text-white/65 text-lg max-w-2xl mx-auto">
             From lead generation to CRM automation — everything you need to build a predictable, scalable sales pipeline.
@@ -175,32 +180,39 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Detail */}
+      {/* ─── SERVICE DETAILS ────────────────────────────────── */}
       <section className="section-padding bg-white">
-        <div className="container-custom space-y-16">
-          {services.map(({ icon: Icon, title, tagline, description, features, results, color }, i) => (
+        <div className="container-custom space-y-20">
+          {services.map(({ icon: Icon, title, tagline, description, features, results, img }, i) => (
             <div
               key={title}
               data-testid={`card-service-detail-${title.toLowerCase().replace(/\s+/g, "-").slice(0, 30)}`}
-              className={`grid lg:grid-cols-2 gap-10 items-center ${i % 2 !== 0 ? "lg:grid-flow-col-dense" : ""}`}
+              className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${i % 2 !== 0 ? "lg:[&>*:first-child]:order-2" : ""}`}
             >
-              <div className={i % 2 !== 0 ? "lg:col-start-2" : ""}>
-                <div className={`h-72 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center relative overflow-hidden`}>
-                  <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.3) 0%, transparent 70%)` }} />
-                  <div className="w-24 h-24 rounded-3xl bg-white/15 border border-white/20 flex items-center justify-center">
-                    <Icon size={40} className="text-white" />
-                  </div>
+              {/* Image */}
+              <div className="relative group">
+                <img
+                  src={img}
+                  alt={title}
+                  className="w-full h-72 object-cover rounded-2xl shadow-xl group-hover:shadow-2xl transition-shadow"
+                />
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/8" />
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center shadow-xl shadow-primary/30">
+                  <Icon size={26} className="text-white" />
                 </div>
               </div>
 
-              <div className={i % 2 !== 0 ? "lg:col-start-1 lg:row-start-1" : ""}>
+              {/* Content */}
+              <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-primary">{tagline}</span>
                 <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0d1b38] mt-2 mb-4">{title}</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">{description}</p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2.5 mb-6">
                   {features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-foreground/80">
-                      <Check size={14} className="text-primary shrink-0" />
+                    <li key={feature} className="flex items-center gap-2.5 text-sm text-foreground/80">
+                      <div className="w-5 h-5 rounded-full bg-primary/12 flex items-center justify-center shrink-0">
+                        <Check size={12} className="text-primary" />
+                      </div>
                       {feature}
                     </li>
                   ))}
@@ -225,14 +237,13 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* ─── PRICING ────────────────────────────────────────── */}
       <section className="section-padding bg-gray-50/70">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-primary text-sm font-bold uppercase tracking-widest">Pricing</span>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif text-[#0d1b38] mt-3 mb-3">
-              Transparent Pricing for{" "}
-              <span className="text-primary">Every Stage</span>
+              Transparent Pricing for <span className="text-primary italic">Every Stage</span>
             </h2>
             <p className="text-muted-foreground">All plans include a free onboarding session. No lock-in contracts.</p>
           </div>
@@ -244,12 +255,12 @@ export default function Services() {
                 data-testid={`card-pricing-${name.toLowerCase()}`}
                 className={`rounded-2xl p-7 border transition-all relative ${
                   highlight
-                    ? "bg-[#0a1628] border-[#e8b84b]/40 text-white shadow-2xl scale-105"
+                    ? "bg-[#0a1628] border-[#e8b84b]/40 text-white shadow-2xl scale-105 shadow-[#e8b84b]/10"
                     : "bg-white border-border hover:shadow-lg hover:border-primary/30"
                 }`}
               >
                 {highlight && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 gold-gradient text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-md">
                     Most Popular
                   </div>
                 )}
@@ -258,9 +269,9 @@ export default function Services() {
                 </div>
                 <div className="flex items-end gap-1 mb-2">
                   <span className={`text-4xl font-bold font-serif ${highlight ? "text-white" : "text-[#0d1b38]"}`}>{price}</span>
-                  <span className={`text-sm pb-1 ${highlight ? "text-white/60" : "text-muted-foreground"}`}>{period}</span>
+                  <span className={`text-sm pb-1 ${highlight ? "text-white/50" : "text-muted-foreground"}`}>{period}</span>
                 </div>
-                <p className={`text-sm mb-6 ${highlight ? "text-white/60" : "text-muted-foreground"}`}>{description}</p>
+                <p className={`text-sm mb-6 ${highlight ? "text-white/55" : "text-muted-foreground"}`}>{description}</p>
                 <ul className="space-y-2.5 mb-8">
                   {features.map((feature) => (
                     <li key={feature} className={`flex items-start gap-2 text-sm ${highlight ? "text-white/80" : "text-foreground/75"}`}>
@@ -292,12 +303,13 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-[#0a1628] text-white">
-        <div className="container-custom text-center">
+      {/* ─── CTA ────────────────────────────────────────────── */}
+      <section className="relative section-padding overflow-hidden">
+        <img src="/images/case-study-2.png" alt="Real estate project" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#060e1f]/92" />
+        <div className="container-custom relative z-10 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white mb-4">
-            Not Sure Which Service is{" "}
-            <span className="text-[#e8b84b]">Right for You?</span>
+            Not Sure Which Service is <span className="text-[#e8b84b] italic">Right for You?</span>
           </h2>
           <p className="text-white/60 text-lg max-w-xl mx-auto mb-8">
             Book a free 30-minute consultation and our team will recommend the right services for your project.
