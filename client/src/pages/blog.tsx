@@ -96,10 +96,10 @@ export default function Blog() {
 
       {/* ─── HERO ───────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <img src="/images/blog-featured.png" alt="Marketing insights" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#060e1f]/97 via-[#0a1628]/93 to-[#060e1f]/90" />
-        <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: `radial-gradient(circle at 50% 60%, rgba(196,146,31,0.5) 0%, transparent 60%)` }}
+        <div className="absolute inset-0 bg-[#060e1f]" />
+        <img src="/images/about-office.png" alt="Marketing office" className="absolute inset-0 w-full h-full object-cover opacity-15" />
+        <div className="absolute inset-0"
+          style={{ backgroundImage: `radial-gradient(ellipse at 30% 50%, rgba(196,146,31,0.18) 0%, transparent 55%), radial-gradient(ellipse at 75% 30%, rgba(13,27,56,0.8) 0%, transparent 60%)` }}
         />
         <div className="container-custom relative z-10 text-center">
           <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Insights</span>

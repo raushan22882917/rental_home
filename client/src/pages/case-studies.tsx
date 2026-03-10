@@ -100,10 +100,11 @@ export default function CaseStudies() {
 
       {/* ─── HERO ───────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <img src="/images/about-hero.png" alt="Real estate project" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#060e1f]/96 via-[#0a1628]/90 to-[#060e1f]/88" />
+        <div className="absolute inset-0 bg-[#060e1f]" />
+        <img src="/images/about-hero.png" alt="Real estate project" className="absolute inset-0 w-full h-full object-cover opacity-28" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/80 via-transparent to-transparent" />
         <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: `radial-gradient(circle at 30% 70%, rgba(196,146,31,0.5) 0%, transparent 60%)` }}
+          style={{ backgroundImage: `radial-gradient(circle at 30% 70%, rgba(196,146,31,0.4) 0%, transparent 55%)` }}
         />
         <div className="container-custom relative z-10 text-center">
           <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Case Studies</span>

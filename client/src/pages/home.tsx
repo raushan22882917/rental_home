@@ -159,23 +159,24 @@ export default function Home() {
           alt="Mumbai skyline"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#050d1e]/96 via-[#0a1628]/88 to-[#0d2040]/90" />
-        <div className="absolute inset-0 opacity-25"
-          style={{ backgroundImage: `radial-gradient(ellipse at 30% 70%, rgba(196,146,31,0.35) 0%, transparent 55%), radial-gradient(ellipse at 75% 25%, rgba(196,146,31,0.18) 0%, transparent 50%)` }}
+        <div className="absolute inset-0 bg-[#060e1f]/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/95 via-[#0a1628]/75 to-[#050d1e]/60" />
+        <div className="absolute inset-0 opacity-20"
+          style={{ backgroundImage: `radial-gradient(ellipse at 30% 70%, rgba(196,146,31,0.35) 0%, transparent 50%), radial-gradient(ellipse at 75% 25%, rgba(196,146,31,0.15) 0%, transparent 45%)` }}
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
-          <div className="inline-flex items-center gap-2 bg-[#e8b84b]/12 backdrop-blur-sm border border-[#e8b84b]/35 text-[#e8b84b] text-xs font-semibold uppercase tracking-widest px-5 py-2 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-[#e8b84b]/20 backdrop-blur-sm border border-[#e8b84b]/50 text-[#e8b84b] text-xs font-semibold uppercase tracking-widest px-5 py-2 rounded-full mb-8 shadow-lg">
             <Award size={12} />
             India's Premium Real Estate Marketing Agency
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-[4.5rem] font-bold font-serif text-white leading-[1.1] mb-6 max-w-5xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-[4.5rem] font-bold font-serif text-white leading-[1.1] mb-6 max-w-5xl mx-auto drop-shadow-lg">
             Fill Your Property Pipeline with{" "}
             <span className="text-[#e8b84b] italic">Qualified Buyers</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/68 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/88 max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
             We help real estate builders generate high-quality leads through precision-targeted digital marketing — Meta Ads, Google Ads, landing pages, and CRM automation.
           </p>
 

@@ -159,14 +159,15 @@ export default function Services() {
 
       {/* ─── HERO ───────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[#060e1f]" />
         <img
           src="/images/service-meta-ads.png"
           alt="Digital marketing services"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#060e1f]/97 via-[#0a1628]/93 to-[#060e1f]/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/80 via-transparent to-transparent" />
         <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: `radial-gradient(circle at 60% 40%, rgba(196,146,31,0.5) 0%, transparent 60%)` }}
+          style={{ backgroundImage: `radial-gradient(circle at 60% 40%, rgba(196,146,31,0.4) 0%, transparent 55%)` }}
         />
         <div className="container-custom relative z-10 text-center">
           <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Our Services</span>
