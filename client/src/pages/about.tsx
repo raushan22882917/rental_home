@@ -70,26 +70,23 @@ export default function About() {
     <div className="min-h-screen">
 
       {/* ─── HERO ───────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[#060e1f]" />
+      <section className="relative min-h-[540px] flex items-center overflow-hidden">
         <img
           src="/images/about-hero.png"
           alt="Real estate aerial view"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/80 via-transparent to-transparent" />
-        <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: `radial-gradient(circle at 70% 30%, rgba(196,146,31,0.4) 0%, transparent 55%)` }}
-        />
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060e1f] via-[#060e1f]/85 to-[#060e1f]/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/70 via-transparent to-[#060e1f]/55" />
+        <div className="container-custom relative z-10 pt-32 pb-20">
+          <div className="max-w-full sm:max-w-[70%] lg:max-w-[52%]">
             <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">About Realtical</span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-6 leading-tight drop-shadow-lg">
               We're on a Mission to{" "}
               <span className="text-[#e8b84b] italic">Transform</span>{" "}
               Real Estate Marketing in India
             </h1>
-            <p className="text-white/65 text-lg leading-relaxed max-w-2xl">
+            <p className="text-white/85 text-lg leading-relaxed">
               Founded by real estate marketing veterans, Realtical exists for one purpose: helping builders and developers generate a consistent, predictable flow of qualified property buyers.
             </p>
           </div>

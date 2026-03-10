@@ -95,18 +95,16 @@ export default function Blog() {
     <div className="min-h-screen">
 
       {/* ─── HERO ───────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[#060e1f]" />
-        <img src="/images/about-office.png" alt="Marketing office" className="absolute inset-0 w-full h-full object-cover opacity-15" />
-        <div className="absolute inset-0"
-          style={{ backgroundImage: `radial-gradient(ellipse at 30% 50%, rgba(196,146,31,0.18) 0%, transparent 55%), radial-gradient(ellipse at 75% 30%, rgba(13,27,56,0.8) 0%, transparent 60%)` }}
-        />
-        <div className="container-custom relative z-10 text-center">
+      <section className="relative min-h-[480px] flex items-center overflow-hidden">
+        <img src="/images/team-meeting.png" alt="Marketing team insights" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060e1f] via-[#060e1f]/70 to-[#060e1f]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/90 via-transparent to-[#060e1f]/75" />
+        <div className="container-custom relative z-10 pt-32 pb-16 text-center">
           <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Insights</span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-3xl mx-auto leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-3xl mx-auto leading-tight drop-shadow-lg">
             Real Estate Marketing <span className="text-[#e8b84b] italic">Insights</span>
           </h1>
-          <p className="text-white/65 text-lg max-w-xl mx-auto mb-8">
+          <p className="text-white/85 text-lg max-w-xl mx-auto mb-8 drop-shadow-md">
             Actionable strategies, deep dives, and industry insights for real estate builders and developers.
           </p>
           <div className="max-w-md mx-auto relative">

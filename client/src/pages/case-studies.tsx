@@ -99,21 +99,20 @@ export default function CaseStudies() {
     <div className="min-h-screen">
 
       {/* ─── HERO ───────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[#060e1f]" />
-        <img src="/images/about-hero.png" alt="Real estate project" className="absolute inset-0 w-full h-full object-cover opacity-28" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/80 via-transparent to-transparent" />
-        <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: `radial-gradient(circle at 30% 70%, rgba(196,146,31,0.4) 0%, transparent 55%)` }}
-        />
-        <div className="container-custom relative z-10 text-center">
-          <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Case Studies</span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-4xl mx-auto leading-tight">
-            Real Results for <span className="text-[#e8b84b] italic">Real Builders</span>
-          </h1>
-          <p className="text-white/65 text-lg max-w-2xl mx-auto">
-            Don't take our word for it. See the exact campaigns, strategies, and results we've delivered for builders across India.
-          </p>
+      <section className="relative min-h-[520px] flex items-center overflow-hidden">
+        <img src="/images/case-study-1.png" alt="Real estate project" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060e1f] via-[#060e1f]/85 to-[#060e1f]/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/70 via-transparent to-[#060e1f]/55" />
+        <div className="container-custom relative z-10 pt-32 pb-20">
+          <div className="max-w-full sm:max-w-[72%] lg:max-w-[55%]">
+            <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Case Studies</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 leading-tight drop-shadow-lg">
+              Real Results for <span className="text-[#e8b84b] italic">Real Builders</span>
+            </h1>
+            <p className="text-white/85 text-lg leading-relaxed">
+              Don't take our word for it. See the exact campaigns, strategies, and results we've delivered for builders across India.
+            </p>
+          </div>
         </div>
       </section>
 

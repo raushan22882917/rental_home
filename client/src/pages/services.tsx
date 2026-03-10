@@ -158,26 +158,25 @@ export default function Services() {
     <div className="min-h-screen">
 
       {/* ─── HERO ───────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[#060e1f]" />
+      <section className="relative min-h-[520px] flex items-center overflow-hidden">
         <img
           src="/images/service-meta-ads.png"
           alt="Digital marketing services"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/80 via-transparent to-transparent" />
-        <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: `radial-gradient(circle at 60% 40%, rgba(196,146,31,0.4) 0%, transparent 55%)` }}
-        />
-        <div className="container-custom relative z-10 text-center">
-          <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Our Services</span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-4xl mx-auto leading-tight">
-            A Complete Marketing Engine for{" "}
-            <span className="text-[#e8b84b] italic">Real Estate Builders</span>
-          </h1>
-          <p className="text-white/65 text-lg max-w-2xl mx-auto">
-            From lead generation to CRM automation — everything you need to build a predictable, scalable sales pipeline.
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060e1f] via-[#060e1f]/85 to-[#060e1f]/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/70 via-transparent to-[#060e1f]/55" />
+        <div className="container-custom relative z-10 pt-32 pb-20">
+          <div className="max-w-full sm:max-w-[72%] lg:max-w-[55%]">
+            <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Our Services</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 leading-tight drop-shadow-lg">
+              A Complete Marketing Engine for{" "}
+              <span className="text-[#e8b84b] italic">Real Estate Builders</span>
+            </h1>
+            <p className="text-white/85 text-lg leading-relaxed">
+              From lead generation to CRM automation — everything you need to build a predictable, scalable sales pipeline.
+            </p>
+          </div>
         </div>
       </section>
 

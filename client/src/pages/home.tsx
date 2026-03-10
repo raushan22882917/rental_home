@@ -159,10 +159,10 @@ export default function Home() {
           alt="Mumbai skyline"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[#060e1f]/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/95 via-[#0a1628]/75 to-[#050d1e]/60" />
-        <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: `radial-gradient(ellipse at 30% 70%, rgba(196,146,31,0.35) 0%, transparent 50%), radial-gradient(ellipse at 75% 25%, rgba(196,146,31,0.15) 0%, transparent 45%)` }}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/95 via-[#060e1f]/55 to-[#050d1e]/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060e1f]/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 opacity-25"
+          style={{ backgroundImage: `radial-gradient(ellipse at 30% 80%, rgba(196,146,31,0.3) 0%, transparent 45%), radial-gradient(ellipse at 75% 20%, rgba(196,146,31,0.12) 0%, transparent 40%)` }}
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
