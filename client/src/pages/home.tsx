@@ -417,24 +417,36 @@ export default function Home() {
       </section>
 
       {/* ─── WHY REALTICAL ─────────────────────────────────────── */}
-      <section className="section-padding overflow-hidden relative">
-        <div className="absolute inset-0">
-          <img src="/images/about-office.png" alt="Office" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-[#0a1628]/93" />
-        </div>
+      <section className="section-padding overflow-hidden relative bg-[#050d1e]">
+        {/* Subtle relevant background — aerial real estate, barely visible */}
+        <img src="/images/about-hero.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.07] pointer-events-none" />
+        {/* Gold radial accent — right side */}
+        <div
+          className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none"
+          style={{ background: "radial-gradient(ellipse at 100% 0%, rgba(196,146,31,0.1) 0%, transparent 65%)" }}
+        />
+        {/* Thin top border */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#e8b84b]/30 to-transparent" />
+
         <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
+
+            {/* LEFT: Content */}
             <div>
-              <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Why Realtical</span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-white mt-3 mb-6">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="h-px w-6 bg-[#e8b84b]" />
+                <span className="text-[#e8b84b] text-[11px] font-bold uppercase tracking-[0.25em]">Why Realtical</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-white leading-tight mb-5">
                 We Don't Just Run Ads.{" "}
                 <span className="text-[#e8b84b] italic">We Build Lead Machines.</span>
               </h2>
-              <p className="text-white/90 text-lg leading-relaxed mb-8">
+              <div className="w-12 h-0.5 bg-gradient-to-r from-[#e8b84b] to-transparent mb-6 rounded-full" />
+              <p className="text-white/85 text-lg leading-relaxed mb-8">
                 Generic marketing agencies don't understand real estate. We do. Every campaign we run is built on 5+ years of real estate-specific data, buyer psychology, and what actually converts in your market.
               </p>
 
-              <div className="space-y-3.5">
+              <div className="space-y-3">
                 {[
                   "Real estate-exclusive agency — no distractions",
                   "Dedicated account manager per project",
@@ -443,38 +455,54 @@ export default function Home() {
                   "Full CRM integration from day one",
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#e8b84b] flex items-center justify-center shrink-0 mt-0.5">
-                      <Check size={11} className="text-[#0a1628] font-bold" />
+                    <div className="w-5 h-5 rounded-full bg-[#e8b84b] flex items-center justify-center shrink-0 mt-0.5 shadow-lg shadow-[#e8b84b]/20">
+                      <Check size={11} className="text-[#050d1e] font-bold" />
                     </div>
-                    <span className="text-white/90 text-sm">{point}</span>
+                    <span className="text-white/90 text-sm leading-relaxed">{point}</span>
                   </div>
                 ))}
               </div>
 
               <div className="mt-10">
                 <Link href="/about">
-                  <Button className="gold-gradient text-white border-0 font-semibold px-6">
+                  <Button className="gold-gradient text-white border-0 font-semibold px-7 shadow-lg shadow-[#e8b84b]/20 hover:opacity-90 hover:scale-105 transition-all">
                     About Realtical <ArrowRight className="ml-2" size={16} />
                   </Button>
                 </Link>
               </div>
             </div>
 
+            {/* RIGHT: Premium stat cards */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "7 Days", label: "Campaign Go-Live Time" },
-                { value: "₹180", label: "Average Cost Per Lead" },
-                { value: "18%", label: "Landing Page Conv. Rate" },
-                { value: "45 Days", label: "Average ROI Breakeven" },
-              ].map(({ value, label }) => (
-                <div key={label} className="bg-white/8 border border-white/10 rounded-2xl p-6 hover:border-[#e8b84b]/40 hover:bg-white/12 transition-all">
-                  <div className="text-3xl font-bold text-[#e8b84b] font-serif mb-2">{value}</div>
-                  <div className="text-white/80 text-sm">{label}</div>
+                { value: "7 Days", label: "Campaign Go-Live Time", icon: Zap },
+                { value: "₹180", label: "Average Cost Per Lead", icon: TrendingUp },
+                { value: "18%", label: "Landing Page Conv. Rate", icon: Target },
+                { value: "45 Days", label: "Average ROI Breakeven", icon: BarChart3 },
+              ].map(({ value, label, icon: Icon }, i) => (
+                <div
+                  key={label}
+                  className={`relative rounded-2xl p-6 border transition-all duration-300 hover:scale-[1.02] group ${
+                    i % 2 === 0
+                      ? "bg-[#e8b84b]/8 border-[#e8b84b]/25 hover:border-[#e8b84b]/50"
+                      : "bg-white/4 border-white/10 hover:border-white/20"
+                  }`}
+                >
+                  <div className="w-8 h-8 rounded-lg bg-[#e8b84b]/15 flex items-center justify-center mb-4">
+                    <Icon size={16} className="text-[#e8b84b]" />
+                  </div>
+                  <div className="text-3xl font-bold text-[#e8b84b] font-serif mb-1.5 leading-none">{value}</div>
+                  <div className="text-white/70 text-sm leading-snug">{label}</div>
+                  {i % 2 === 0 && (
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#e8b84b]/60 via-[#e8b84b]/20 to-transparent rounded-b-2xl" />
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </div>
+        {/* Thin bottom border */}
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       </section>
 
       {/* ─── HOW WE WORK ───────────────────────────────────────── */}
