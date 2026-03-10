@@ -157,7 +157,7 @@ export default function Home() {
         <img
           src="/images/hero-bg.png"
           alt="Mumbai skyline"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/95 via-[#060e1f]/55 to-[#050d1e]/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#060e1f]/60 via-transparent to-transparent" />
@@ -300,7 +300,7 @@ export default function Home() {
       {/* ─── WHY REALTICAL ─────────────────────────────────────── */}
       <section className="section-padding overflow-hidden relative">
         <div className="absolute inset-0">
-          <img src="/images/about-office.png" alt="Office" className="w-full h-full object-cover" />
+          <img src="/images/about-office.png" alt="Office" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-[#0a1628]/93" />
         </div>
         <div className="container-custom relative z-10">
