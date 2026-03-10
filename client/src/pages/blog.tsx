@@ -146,9 +146,9 @@ export default function Blog() {
                 <h2 className="text-2xl lg:text-3xl font-bold font-serif text-white mb-4 group-hover:text-[#e8b84b] transition-colors leading-snug">
                   {featured.title}
                 </h2>
-                <p className="text-white/55 text-sm leading-relaxed mb-6">{featured.excerpt}</p>
+                <p className="text-white/85 text-sm leading-relaxed mb-6">{featured.excerpt}</p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3 text-white/35 text-xs">
+                  <div className="flex items-center gap-3 text-white/65 text-xs">
                     <span>{featured.date}</span>
                     <span>·</span>
                     <div className="flex items-center gap-1">
@@ -240,7 +240,7 @@ export default function Blog() {
             <h2 className="text-3xl font-bold font-serif text-white mt-3 mb-4">
               Get Weekly Real Estate <span className="text-[#e8b84b] italic">Marketing Tips</span>
             </h2>
-            <p className="text-white/60 mb-8">
+            <p className="text-white/90 mb-8">
               Join 2,000+ builders and developers who read our weekly insights on real estate marketing.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -257,7 +257,7 @@ export default function Blog() {
                 Subscribe <ArrowRight className="ml-1" size={14} />
               </Button>
             </div>
-            <p className="text-white/30 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+            <p className="text-white/60 text-xs mt-4">No spam. Unsubscribe anytime.</p>
           </div>
         </div>
       </section>

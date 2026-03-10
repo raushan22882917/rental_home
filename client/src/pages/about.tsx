@@ -130,7 +130,7 @@ export default function About() {
               </div>
               <div className="absolute -top-5 -right-5 bg-[#0a1628] border border-[#e8b84b]/30 rounded-2xl p-5 shadow-xl">
                 <div className="text-3xl font-bold font-serif text-[#e8b84b] mb-1">120+</div>
-                <div className="text-white/60 text-xs">Builder Projects</div>
+                <div className="text-white/85 text-xs">Builder Projects</div>
               </div>
             </div>
           </div>

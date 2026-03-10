@@ -269,9 +269,9 @@ export default function Services() {
                 </div>
                 <div className="flex items-end gap-1 mb-2">
                   <span className={`text-4xl font-bold font-serif ${highlight ? "text-white" : "text-[#0d1b38]"}`}>{price}</span>
-                  <span className={`text-sm pb-1 ${highlight ? "text-white/50" : "text-muted-foreground"}`}>{period}</span>
+                  <span className={`text-sm pb-1 ${highlight ? "text-[#e8b84b]/80" : "text-muted-foreground"}`}>{period}</span>
                 </div>
-                <p className={`text-sm mb-6 ${highlight ? "text-white/55" : "text-muted-foreground"}`}>{description}</p>
+                <p className={`text-sm mb-6 ${highlight ? "text-white/85" : "text-muted-foreground"}`}>{description}</p>
                 <ul className="space-y-2.5 mb-8">
                   {features.map((feature) => (
                     <li key={feature} className={`flex items-start gap-2 text-sm ${highlight ? "text-white/80" : "text-foreground/75"}`}>
@@ -311,7 +311,7 @@ export default function Services() {
           <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white mb-4">
             Not Sure Which Service is <span className="text-[#e8b84b] italic">Right for You?</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto mb-8">
+          <p className="text-white/90 text-lg max-w-xl mx-auto mb-8">
             Book a free 30-minute consultation and our team will recommend the right services for your project.
           </p>
           <Link href="/lead-capture">

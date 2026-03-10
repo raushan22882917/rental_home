@@ -136,7 +136,7 @@ export default function LeadCapture() {
               Generation Blueprint
             </h1>
 
-            <p className="text-white/65 text-base leading-relaxed mb-8">
+            <p className="text-white/90 text-base leading-relaxed mb-8">
               In 30 minutes, our experts will analyze your project and give you a custom roadmap to generate consistent, qualified leads — no obligation.
             </p>
 
@@ -146,7 +146,7 @@ export default function LeadCapture() {
                   <div className="w-5 h-5 rounded-full bg-[#e8b84b] flex items-center justify-center shrink-0 mt-0.5">
                     <Check size={11} className="text-[#0a1628]" />
                   </div>
-                  <span className="text-white/75 text-sm">{benefit}</span>
+                  <span className="text-white/92 text-sm">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -155,7 +155,7 @@ export default function LeadCapture() {
               {socialProof.map(({ value, label }) => (
                 <div key={label} className="bg-white/8 border border-white/10 rounded-xl p-3 text-center">
                   <div className="text-[#e8b84b] text-lg font-bold font-serif">{value}</div>
-                  <div className="text-white/50 text-xs">{label}</div>
+                  <div className="text-white/80 text-xs">{label}</div>
                 </div>
               ))}
             </div>
@@ -168,14 +168,14 @@ export default function LeadCapture() {
                       <Star key={i} size={10} className="text-[#e8b84b] fill-[#e8b84b]" />
                     ))}
                   </div>
-                  <p className="text-white/65 text-xs leading-relaxed mb-3 italic">"{text}"</p>
+                  <p className="text-white/85 text-xs leading-relaxed mb-3 italic">"{text}"</p>
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-white text-xs font-bold">
                       {avatar}
                     </div>
                     <div>
                       <div className="text-white text-xs font-semibold">{name}</div>
-                      <div className="text-white/45 text-xs">{role}</div>
+                      <div className="text-[#e8b84b]/80 text-xs">{role}</div>
                     </div>
                   </div>
                 </div>

@@ -213,7 +213,7 @@ export default function Home() {
                 className="bg-white/8 backdrop-blur-sm border border-white/12 rounded-2xl p-4 sm:p-5 hover:border-[#e8b84b]/40 transition-all"
               >
                 <div className="text-2xl sm:text-3xl font-bold text-[#e8b84b] font-serif mb-1">{value}</div>
-                <div className="text-white/55 text-xs sm:text-sm leading-tight">{label}</div>
+                <div className="text-white/80 text-xs sm:text-sm leading-tight">{label}</div>
               </div>
             ))}
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
                 We Don't Just Run Ads.{" "}
                 <span className="text-[#e8b84b] italic">We Build Lead Machines.</span>
               </h2>
-              <p className="text-white/65 text-lg leading-relaxed mb-8">
+              <p className="text-white/90 text-lg leading-relaxed mb-8">
                 Generic marketing agencies don't understand real estate. We do. Every campaign we run is built on 5+ years of real estate-specific data, buyer psychology, and what actually converts in your market.
               </p>
 
@@ -327,7 +327,7 @@ export default function Home() {
                     <div className="w-5 h-5 rounded-full bg-[#e8b84b] flex items-center justify-center shrink-0 mt-0.5">
                       <Check size={11} className="text-[#0a1628] font-bold" />
                     </div>
-                    <span className="text-white/78 text-sm">{point}</span>
+                    <span className="text-white/92 text-sm">{point}</span>
                   </div>
                 ))}
               </div>
@@ -350,7 +350,7 @@ export default function Home() {
               ].map(({ value, label }) => (
                 <div key={label} className="bg-white/8 border border-white/10 rounded-2xl p-6 hover:border-[#e8b84b]/40 hover:bg-white/12 transition-all">
                   <div className="text-3xl font-bold text-[#e8b84b] font-serif mb-2">{value}</div>
-                  <div className="text-white/60 text-sm">{label}</div>
+                  <div className="text-white/80 text-sm">{label}</div>
                 </div>
               ))}
             </div>
@@ -494,12 +494,12 @@ export default function Home() {
             Ready to Fill Your Sales Pipeline with{" "}
             <span className="text-[#e8b84b] italic">Qualified Leads?</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
+          <p className="text-white/90 text-lg max-w-2xl mx-auto mb-10">
             Book a free 30-minute strategy call. We'll analyze your project and show you exactly how many leads we can generate.
           </p>
 
           <div className="bg-white/8 backdrop-blur-sm border border-white/12 rounded-2xl p-8 max-w-xl mx-auto">
-            <p className="text-white/75 text-sm font-semibold mb-5">Enter your email to get started</p>
+            <p className="text-[#e8b84b]/90 text-sm font-semibold mb-5">Enter your email to get started</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Input
                 data-testid="input-cta-email"
@@ -518,7 +518,7 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <p className="text-white/30 text-xs mt-4">No credit card required. Free 30-minute consultation.</p>
+            <p className="text-white/60 text-xs mt-4">No credit card required. Free 30-minute consultation.</p>
           </div>
         </div>
       </section>

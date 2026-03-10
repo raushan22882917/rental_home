@@ -89,18 +89,20 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-[#0a1628] relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-15"
-          style={{ backgroundImage: `radial-gradient(circle at 40% 60%, rgba(196,146,31,0.5) 0%, transparent 60%)` }}
+      <section className="relative min-h-[480px] flex items-center overflow-hidden">
+        <img src="/images/about-office.png" alt="Realtical office" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060e1f] via-[#060e1f]/75 to-[#060e1f]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/90 via-transparent to-[#060e1f]/70" />
+        <div className="absolute inset-0 opacity-20"
+          style={{ backgroundImage: `radial-gradient(ellipse at 50% 60%, rgba(196,146,31,0.4) 0%, transparent 55%)` }}
         />
-        <div className="container-custom relative z-10 text-center">
+        <div className="container-custom relative z-10 pt-32 pb-16 text-center">
           <span className="text-[#e8b84b] text-sm font-bold uppercase tracking-widest">Contact Us</span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-white mt-4 mb-5 max-w-3xl mx-auto drop-shadow-lg">
             Let's Talk About{" "}
-            <span className="text-[#e8b84b]">Your Project</span>
+            <span className="text-[#e8b84b] italic">Your Project</span>
           </h1>
-          <p className="text-white/65 text-lg max-w-xl mx-auto">
+          <p className="text-white/90 text-lg max-w-xl mx-auto drop-shadow-md">
             Whether you're launching a new project or need to improve your existing marketing, we'd love to hear from you.
           </p>
         </div>

@@ -172,7 +172,7 @@ export default function CaseStudies() {
                       {tag}
                     </span>
                     <h2 className="text-2xl md:text-3xl font-bold font-serif text-white mb-1">{project}</h2>
-                    <p className="text-white/65 text-sm">{client} · {projectType} · {duration}</p>
+                    <p className="text-white/85 text-sm">{client} · {projectType} · {duration}</p>
                   </div>
                 </div>
 
@@ -224,7 +224,7 @@ export default function CaseStudies() {
           <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white mb-4">
             Want Results Like These <span className="text-[#e8b84b] italic">for Your Project?</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto mb-8">
+          <p className="text-white/90 text-lg max-w-xl mx-auto mb-8">
             Book a free strategy call and we'll show you exactly what results we can achieve for your specific project and market.
           </p>
           <Link href="/lead-capture">
