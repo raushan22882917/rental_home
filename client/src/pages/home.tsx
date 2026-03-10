@@ -176,7 +176,7 @@ export default function Home() {
             <span className="text-[#e8b84b] italic">Qualified Buyers</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/88 max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
+          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
             We help real estate builders generate high-quality leads through precision-targeted digital marketing — Meta Ads, Google Ads, landing pages, and CRM automation.
           </p>
 
@@ -327,7 +327,7 @@ export default function Home() {
                     <div className="w-5 h-5 rounded-full bg-[#e8b84b] flex items-center justify-center shrink-0 mt-0.5">
                       <Check size={11} className="text-[#0a1628] font-bold" />
                     </div>
-                    <span className="text-white/92 text-sm">{point}</span>
+                    <span className="text-white/90 text-sm">{point}</span>
                   </div>
                 ))}
               </div>

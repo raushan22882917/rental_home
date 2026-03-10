@@ -146,7 +146,7 @@ export default function LeadCapture() {
                   <div className="w-5 h-5 rounded-full bg-[#e8b84b] flex items-center justify-center shrink-0 mt-0.5">
                     <Check size={11} className="text-[#0a1628]" />
                   </div>
-                  <span className="text-white/92 text-sm">{benefit}</span>
+                  <span className="text-white/90 text-sm">{benefit}</span>
                 </div>
               ))}
             </div>
