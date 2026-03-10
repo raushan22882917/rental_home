@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Check,
@@ -154,70 +155,184 @@ export default function Home() {
     <div className="min-h-screen">
 
       {/* ─── HERO ─────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#050d1e]">
+        {/* Background image — very subtle, right-side reveal */}
         <img
           src="/images/hero-bg.png"
           alt="Mumbai skyline"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-35"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.18]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/98 via-[#060e1f]/60 to-[#050d1e]/45" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060e1f]/65 via-transparent to-transparent" />
-        <div className="absolute inset-0 opacity-30"
-          style={{ backgroundImage: `radial-gradient(ellipse at 30% 80%, rgba(196,146,31,0.35) 0%, transparent 45%), radial-gradient(ellipse at 75% 20%, rgba(196,146,31,0.15) 0%, transparent 40%)` }}
+        {/* Left-heavy dark overlay — content side stays pure dark */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050d1e] via-[#050d1e]/92 to-[#050d1e]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050d1e] via-transparent to-[#050d1e]/70" />
+        {/* Gold radial glow — bottom left accent */}
+        <div
+          className="absolute bottom-0 left-0 w-[700px] h-[500px] pointer-events-none"
+          style={{ background: "radial-gradient(ellipse at 0% 100%, rgba(196,146,31,0.14) 0%, transparent 65%)" }}
+        />
+        {/* Subtle architectural grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025] pointer-events-none"
+          style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px)", backgroundSize: "80px 80px" }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
-          <div className="inline-flex items-center gap-2 bg-[#e8b84b]/20 backdrop-blur-sm border border-[#e8b84b]/55 text-[#e8b84b] text-xs font-semibold uppercase tracking-widest px-5 py-2 rounded-full mb-8 shadow-lg shadow-[#e8b84b]/10">
-            <Award size={12} />
-            India's Premium Real Estate Marketing Agency
+        <div className="container-custom relative z-10 pt-32 pb-20">
+          <div className="grid lg:grid-cols-[1fr_420px] gap-12 xl:gap-20 items-center">
+
+            {/* ── LEFT: Content ── */}
+            <div>
+              {/* Label */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-3 mb-8"
+              >
+                <div className="h-px w-8 bg-[#e8b84b]" />
+                <span className="text-[#e8b84b] text-[11px] font-bold uppercase tracking-[0.28em]">India's Premier Real Estate Marketing Agency</span>
+                <div className="h-px w-8 bg-[#e8b84b]/40" />
+              </motion.div>
+
+              {/* Heading — line by line animation */}
+              <h1 className="font-bold font-serif leading-[1.04] mb-6">
+                <motion.span
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.15 }}
+                  className="block text-white text-4xl sm:text-5xl lg:text-[4.5rem]"
+                >
+                  Fill Your Property
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                  className="block text-white text-4xl sm:text-5xl lg:text-[4.5rem]"
+                >
+                  Pipeline with
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.45 }}
+                  className="block text-[#e8b84b] italic text-4xl sm:text-5xl lg:text-[4.5rem] drop-shadow-[0_4px_24px_rgba(232,184,75,0.45)]"
+                >
+                  Qualified Buyers.
+                </motion.span>
+              </h1>
+
+              {/* Gold accent line */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
+                style={{ originX: 0 }}
+                className="h-[2px] w-20 bg-gradient-to-r from-[#e8b84b] to-[#e8b84b]/20 mb-8 rounded-full"
+              />
+
+              {/* Animated subtitle */}
+              <TextGenerateEffect
+                words="We help real estate builders generate high-quality leads through precision-targeted digital marketing — Meta Ads, Google Ads, landing pages, and CRM automation."
+                className="max-w-xl mb-10"
+                textClassName="text-white/85 text-base sm:text-lg leading-relaxed"
+                duration={0.35}
+              />
+
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.4 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <Link href="/lead-capture">
+                  <Button
+                    data-testid="button-hero-strategy-call"
+                    size="lg"
+                    className="gold-gradient text-white border-0 text-sm font-bold px-8 py-6 shadow-2xl shadow-[#e8b84b]/20 hover:opacity-90 hover:scale-105 transition-all tracking-wide"
+                  >
+                    Get Free Strategy Call
+                    <ArrowRight className="ml-2" size={16} />
+                  </Button>
+                </Link>
+                <Link href="/case-studies">
+                  <Button
+                    data-testid="button-hero-case-studies"
+                    size="lg"
+                    variant="outline"
+                    className="bg-transparent text-white border border-white/25 hover:bg-white/8 hover:border-white/40 text-sm font-semibold px-8 py-6 backdrop-blur-sm tracking-wide transition-all"
+                  >
+                    <Play size={13} className="mr-2 fill-white" />
+                    See Our Results
+                  </Button>
+                </Link>
+              </motion.div>
+
+              {/* Stats row — desktop bottom */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.7 }}
+                className="hidden lg:flex gap-8 mt-14 pt-8 border-t border-white/10"
+              >
+                {stats.map(({ value, label }) => (
+                  <div key={label} data-testid={`stat-${label.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`}>
+                    <div className="text-2xl font-bold text-[#e8b84b] font-serif leading-none mb-1">{value}</div>
+                    <div className="text-white/60 text-xs tracking-wide">{label}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* ── RIGHT: Floating stats card ── */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="hidden lg:block"
+            >
+              <div className="relative">
+                {/* Gold accent dot */}
+                <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-[#e8b84b] shadow-lg shadow-[#e8b84b]/40" />
+                <div className="bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+                  <div className="flex items-center gap-2 mb-6">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#e8b84b]" />
+                    <span className="text-white/45 text-[11px] font-bold uppercase tracking-[0.2em]">Live Performance</span>
+                  </div>
+                  <div className="space-y-5">
+                    {stats.map(({ value, label }, i) => (
+                      <div key={label} className="flex items-center justify-between pb-5 border-b border-white/6 last:border-0 last:pb-0">
+                        <span className="text-white/65 text-sm">{label}</span>
+                        <motion.span
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 1 + i * 0.15 }}
+                          className="text-[#e8b84b] font-bold font-serif text-xl"
+                        >
+                          {value}
+                        </motion.span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-6 flex items-center gap-2 bg-[#e8b84b]/10 rounded-xl px-4 py-3">
+                    <div className="w-2 h-2 rounded-full bg-[#4ade80] animate-pulse" />
+                    <span className="text-white/70 text-xs">Updated in real-time</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-[4.8rem] font-bold font-serif leading-[1.08] mb-6 max-w-5xl mx-auto">
-            <span className="text-white drop-shadow-[0_2px_12px_rgba(255,255,255,0.15)]">Fill Your Property Pipeline with{" "}</span>
-            <span className="text-[#e8b84b] italic drop-shadow-[0_2px_20px_rgba(232,184,75,0.6)]">Qualified Buyers</span>
-          </h1>
-
-          <TextGenerateEffect
-            words="We help real estate builders generate high-quality leads through precision-targeted digital marketing — Meta Ads, Google Ads, landing pages, and CRM automation."
-            className="text-lg sm:text-xl max-w-2xl mx-auto mb-10"
-            textClassName="text-white/90"
-            duration={0.4}
-          />
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link href="/lead-capture">
-              <Button
-                data-testid="button-hero-strategy-call"
-                size="lg"
-                className="gold-gradient text-white border-0 text-base font-semibold px-8 py-6 shadow-2xl hover:opacity-90 hover:scale-105 transition-all"
-              >
-                Get Free Strategy Call
-                <ArrowRight className="ml-2" size={18} />
-              </Button>
-            </Link>
-            <Link href="/case-studies">
-              <Button
-                data-testid="button-hero-case-studies"
-                size="lg"
-                variant="outline"
-                className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-base font-semibold px-8 py-6 backdrop-blur-sm"
-              >
-                <Play size={15} className="mr-2 fill-white" />
-                See Our Results
-              </Button>
-            </Link>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto">
+          {/* Mobile stats grid */}
+          <div className="lg:hidden grid grid-cols-2 gap-3 mt-10">
             {stats.map(({ value, label }) => (
               <div
                 key={label}
                 data-testid={`stat-${label.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`}
-                className="bg-white/8 backdrop-blur-sm border border-white/12 rounded-2xl p-4 sm:p-5 hover:border-[#e8b84b]/40 transition-all"
+                className="bg-white/5 border border-white/10 rounded-2xl p-4"
               >
-                <div className="text-2xl sm:text-3xl font-bold text-[#e8b84b] font-serif mb-1">{value}</div>
-                <div className="text-white/80 text-xs sm:text-sm leading-tight">{label}</div>
+                <div className="text-xl font-bold text-[#e8b84b] font-serif mb-1">{value}</div>
+                <div className="text-white/65 text-xs">{label}</div>
               </div>
             ))}
           </div>
@@ -225,8 +340,8 @@ export default function Home() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/25 flex justify-center pt-2">
-            <div className="w-1 h-2 bg-white/45 rounded-full" />
+          <div className="w-5 h-8 rounded-full border border-white/20 flex justify-center pt-1.5">
+            <div className="w-0.5 h-1.5 bg-[#e8b84b]/70 rounded-full" />
           </div>
         </div>
       </section>
