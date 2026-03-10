@@ -5,6 +5,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import {
   ArrowRight,
   Check,
@@ -157,28 +158,31 @@ export default function Home() {
         <img
           src="/images/hero-bg.png"
           alt="Mumbai skyline"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-50"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/95 via-[#060e1f]/55 to-[#050d1e]/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060e1f]/60 via-transparent to-transparent" />
-        <div className="absolute inset-0 opacity-25"
-          style={{ backgroundImage: `radial-gradient(ellipse at 30% 80%, rgba(196,146,31,0.3) 0%, transparent 45%), radial-gradient(ellipse at 75% 20%, rgba(196,146,31,0.12) 0%, transparent 40%)` }}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060e1f]/98 via-[#060e1f]/60 to-[#050d1e]/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060e1f]/65 via-transparent to-transparent" />
+        <div className="absolute inset-0 opacity-30"
+          style={{ backgroundImage: `radial-gradient(ellipse at 30% 80%, rgba(196,146,31,0.35) 0%, transparent 45%), radial-gradient(ellipse at 75% 20%, rgba(196,146,31,0.15) 0%, transparent 40%)` }}
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
-          <div className="inline-flex items-center gap-2 bg-[#e8b84b]/20 backdrop-blur-sm border border-[#e8b84b]/50 text-[#e8b84b] text-xs font-semibold uppercase tracking-widest px-5 py-2 rounded-full mb-8 shadow-lg">
+          <div className="inline-flex items-center gap-2 bg-[#e8b84b]/20 backdrop-blur-sm border border-[#e8b84b]/55 text-[#e8b84b] text-xs font-semibold uppercase tracking-widest px-5 py-2 rounded-full mb-8 shadow-lg shadow-[#e8b84b]/10">
             <Award size={12} />
             India's Premium Real Estate Marketing Agency
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-[4.5rem] font-bold font-serif text-white leading-[1.1] mb-6 max-w-5xl mx-auto drop-shadow-lg">
-            Fill Your Property Pipeline with{" "}
-            <span className="text-[#e8b84b] italic">Qualified Buyers</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-[4.8rem] font-bold font-serif leading-[1.08] mb-6 max-w-5xl mx-auto">
+            <span className="text-white drop-shadow-[0_2px_12px_rgba(255,255,255,0.15)]">Fill Your Property Pipeline with{" "}</span>
+            <span className="text-[#e8b84b] italic drop-shadow-[0_2px_20px_rgba(232,184,75,0.6)]">Qualified Buyers</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-            We help real estate builders generate high-quality leads through precision-targeted digital marketing — Meta Ads, Google Ads, landing pages, and CRM automation.
-          </p>
+          <TextGenerateEffect
+            words="We help real estate builders generate high-quality leads through precision-targeted digital marketing — Meta Ads, Google Ads, landing pages, and CRM automation."
+            className="text-lg sm:text-xl max-w-2xl mx-auto mb-10"
+            textClassName="text-white/90"
+            duration={0.4}
+          />
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <Link href="/lead-capture">
